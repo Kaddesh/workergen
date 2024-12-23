@@ -19,3 +19,28 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.border-gradient {
+  position: relative;
+  padding: 1.5rem; /* Adjust padding as needed */
+  border-radius: 8px; /* Optional: Add border radius */
+}
+
+.border-gradient::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1;
+  border-radius: inherit; /* Match the section's border radius */
+  background: linear-gradient(to right, #3b82f6, #ec4899, #9333ea); /* Gradient colors */
+}
+
+li::before {
+  content: '•'; /* Custom bullet */
+  margin-right: 8px;
+  color: black; /* Tailwind's text-slate-600 */
+}
+
