@@ -1,12 +1,12 @@
   'use client'
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { cn } from '../../app/lib/utils';
-import DashboardHeader from './dashboard/_components/navbar/header';
+import { cn } from './lib/utils';
+import DashboardHeader from './(dashboard)/dashboard/_components/navbar/header';
 import React, { useState } from 'react';
-import Sidebar from './dashboard/_components/navbar/sidebar';
-import Navbar from './dashboard/_components/navbar/header';
-import BlackNav from './dashboard/_components/navbar/blackNav';
+import Sidebar from './(dashboard)/dashboard/_components/navbar/sidebar';
+import Navbar from './(dashboard)/dashboard/_components/navbar/header';
+import BlackNav from './(dashboard)/dashboard/_components/navbar/blackNav';
 
 const inter = Inter({ subsets: ['latin'] });
 

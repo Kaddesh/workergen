@@ -22,7 +22,7 @@ import { GiSkills } from "react-icons/gi";
   export const sidebarData = [
     {
       items: [
-        { icon: AiFillHome, label: "Home", link: "/dashboard" },
+        { icon: AiFillHome, label: "Home", link: "/" },
         { icon: AiOutlineClockCircle,   label: "Recent", link: "/recent" },
         { icon: AiOutlinePushpin, label: "Pinned", link: "/pinned" },  
         { icon: GiSkills, label: "Agent Skill", link: "/agenting" },
