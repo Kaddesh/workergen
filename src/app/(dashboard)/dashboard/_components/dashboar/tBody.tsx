@@ -2,11 +2,11 @@ import React from "react";
 import { TableRow } from "../../../../type/tbodyType";
 
 interface TableBodyProps {
-    data: TableRow[];
-  }
-  
-  const TableBody: React.FC<TableBodyProps> = ({ data }) => {
-    return (
+  data: TableRow[];
+}
+
+const TableBody: React.FC<TableBodyProps> = ({ data }) => {
+  return (
     <tbody>
       {data.map((item, index) => (
         <tr

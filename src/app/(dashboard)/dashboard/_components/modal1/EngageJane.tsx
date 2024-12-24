@@ -36,7 +36,7 @@ const EngageJane: React.FC<EngageJaneProps>  = ({onClose, isOpen}) => {
 if (!isOpen) return null;
   return (
     
-    <div className="relative w-full lg:w-[80%] max-h-screen p-px bg-gradient-to-b from-blue-400 to-purple-600 rounded-2xl shadow-lg lg:overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+    <div className="relative w-full lg:w-[80%] max-h-screen p-px bg-gradient-to-b from-blue-400 to-purple-600 rounded-2xl shadow-lg overflow-y-auto" onClick={(e) => e.stopPropagation()}>
       <div className="bg-white rounded-2xl  md:px-3 pb-4">
         <div className="pt-4 lg:p-4 ">
       <div className="flex flex-col items-center justify-center gap-4 ">

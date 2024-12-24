@@ -1,15 +1,23 @@
-import React from "react";
+ 'use client'
+import React, { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import TableBody from "./tBody";
 import { tableData } from "../../../../lib/tableData";
 import { IoIosArrowRoundDown } from "react-icons/io";
 import SearchInput from "./searchInput";
+import { TableRow } from "../../../../type/tbodyType";
 
 const Table = () => {
+  const [filteredData, setFilteredData] = useState<TableRow[]>(tableData);
+
+  const handleSearchResults = (results: TableRow[]) => {
+    setFilteredData(results);
+  };
+
   return (
     <div className="border rounded-md shadow-lg">
       {/* Search Input */}
-      <SearchInput />
+      <SearchInput data={tableData} onSearch={handleSearchResults} />
 
       {/* Table Wrapper for Horizontal Scrolling */}
       <div className="overflow-x-auto">
@@ -43,7 +51,8 @@ const Table = () => {
               </th>
             </tr>
           </thead>
-          <TableBody data={tableData} />
+          {/* Pass filtered data to TableBody */}
+          <TableBody data={filteredData} />
         </table>
       </div>
     </div>

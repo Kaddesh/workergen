@@ -22,7 +22,7 @@ const DashboardModaal: React.FC = () => {
   };
 
   return (
-    <section className="rounded-2xl border-2 border-[#49A2FA] lg:pl-4 lg:pr-2 py-6 ">
+    <section className=" relative rounded-2xl border-2 border-[#49A2FA] px-2 lg:pl-4 lg:pr-2 py-6 ">
       {/* Greeting Section */}
         <div className="flex flex-col lg:flex-row  w-full gap-4">
         <div className="flex items-center w-full lg:w-[60%] gap-2">
@@ -46,7 +46,7 @@ const DashboardModaal: React.FC = () => {
 
       {/* Modal */}
       {isModalOpen && (
-        <div className="fixed top-0 mt-11 z-50 flex items-center justify-center ">
+        <div className="absolute -top-16 flex items-center lg:justify-center mt-11 z-50  ">
           <EngageJane onClose={handleCloseModal} isOpen={isModalOpen}/>
         </div>
       )}

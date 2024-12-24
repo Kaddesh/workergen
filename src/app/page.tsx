@@ -9,7 +9,7 @@ type Props = {};
 
 function Page({}: Props) {
   return (
-   <div className="pt-4 px-3 lg:pl-[12rem] lg:pr-[2rem] pb-10 space-y-6">
+   <div className="pt-4 px-3 lg:pl-[11.25rem] lg:pr-[2rem] pb-10 space-y-6">
     <DashboardModaal />
     <Table />
     <FixedIcons />
