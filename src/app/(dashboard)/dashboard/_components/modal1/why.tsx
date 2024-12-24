@@ -45,7 +45,7 @@ const Why = () => {
 
       <div className="flex flex-col md:flex-row  relative gap-2">
         <div className="flex gap-2 p-3 rounded-lg bg-white shadow-xl w-full md:min-w-44">
-          <Image src="" alt="" width={50} height={50} />
+          <Image src="/assets/images/stamp.png" alt="stamp" width={35} height={35} />
           <div className="flex flex-col gap-2">
             <p className="text-xs text-gray-700">Decision maker</p>
             <h3 className="text-sm text-purple-600">Yes</h3>
@@ -53,7 +53,7 @@ const Why = () => {
         </div>
 
         <div className="flex gap-2 p-3 rounded-lg bg-white shadow-xl w-full md:min-w-44">
-          <Image src="" alt="" width={50} height={50} />
+          <Image src="/assets/images/gold.png" alt="gold" width={35} height={35} />
           <div className="flex flex-col gap-2">
             <p className="text-xs text-gray-700">Potential deal value</p>
             <h3 className="text-sm text-purple-600">$1M</h3>
@@ -61,7 +61,7 @@ const Why = () => {
         </div>
 
         <div className="flex gap-2 p-3 rounded-lg bg-white shadow-xl w-full md:min-w-44">
-          <Image src="" alt="" width={50} height={50} />
+          <Image src="/assets/images/print.png" alt="print" width={35} height={35} />
           <div className="flex flex-col gap-2">
             <p className="text-xs text-gray-700">Intent</p>
             <h3 className="text-sm text-purple-600">High</h3>

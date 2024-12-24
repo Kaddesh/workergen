@@ -1,4 +1,5 @@
-import React from "react";
+   'use client'
+import React, { useState } from "react";
 import Image from "next/image";
 import { LuCalendarRange } from "react-icons/lu";
 import { MdOutlineMarkEmailUnread } from "react-icons/md";
@@ -6,12 +7,22 @@ import { dashboardData } from "../../../lib/dashmodal";
 import HorizontalBar from "./dashboar/horizontalBar";
 import Activity from "./dashboar/activity";
 import Lead from "./dashboar/lead";
+import EngageJane from "./modal1/EngageJane";
 
 const DashboardModaal: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   
+  const handleCardClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
-    <section className="rounded-2xl border-2 border-[#49A2FA] pl-4 pr-2 py-6 ">
+    <section className="rounded-2xl border-2 border-[#49A2FA] lg:pl-4 lg:pr-2 py-6 ">
       {/* Greeting Section */}
         <div className="flex flex-col lg:flex-row  w-full gap-4">
         <div className="flex items-center w-full lg:w-[60%] gap-2">
@@ -25,13 +36,20 @@ const DashboardModaal: React.FC = () => {
 
       {/* Leads Section */}
       <div className="flex flex-col lg:flex-row gap-3 lg:gap-0 w-full mt-10">
-        <Lead />
+        <Lead  handleCard={handleCardClick}/>
 
       <div className="h-52 hidden lg:block shadow-lg w-px mx-3 bg-gray-400"></div>
 
        {/* Activities Section */}
        <Activity />
       </div>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed top-0 mt-11 z-50 flex items-center justify-center ">
+          <EngageJane onClose={handleCloseModal} isOpen={isModalOpen}/>
+        </div>
+      )}
     </section>
   );
 };

@@ -7,21 +7,14 @@ import { MdOutlineMarkEmailUnread } from "react-icons/md";
 import { VscSparkleFilled } from "react-icons/vsc";
 import EngageJane from "../modal1/EngageJane";
 
-const Lead = () => {
+interface CardProps {
+  handleCard: () => void
+}
+const Lead: React.FC<CardProps> = ({handleCard}) => {
   const { leads } = dashboardData;
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleCardClick = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
-
   return (
-    <div className="w-[60%]">
+    <div className="w-full lg:w-[70%]">
       <h4 className="text-xs text-gray-300 text-wrap">
         Copilot has pinpointed 20 key leads that show strong purchase intent and
         are actively engaging. These leads need your focus
@@ -43,7 +36,7 @@ const Lead = () => {
               </div>
               <div className="flex flex-col gap-2">
                 <h4 className="text-xs font-semibold">{lead.name}</h4>
-                <h4 className="flex gap-2 text-[0.625rem] text-gray-400">
+                <h4 className="flex items-center gap-2 text-[0.625rem] text-nowrap text-gray-400">
                   {lead.position}
                   <div className="h-1 w-1 bg-black rounded-full"></div>
                   {lead.company}
@@ -52,7 +45,7 @@ const Lead = () => {
             </div>
 
             {/* Description and Actions */}
-            <div className="relative flex flex-col gap-2 px-2 py-3 bg-slate-200 rounded-md cursor-pointer" onClick={handleCardClick}>
+            <div className="relative flex flex-col gap-2 px-2 py-3 bg-slate-200 rounded-md cursor-pointer " onClick={handleCard}>
               {index === 0 ? <div className="flex gap-2 ">
                 <MdOutlineMarkEmailUnread />
                 <h4 className="text-xs font-semibold">{lead.iconDescrip}</h4>
@@ -82,12 +75,7 @@ const Lead = () => {
         ))}
       </div>
 
-      {/* Modal */}
-      {isModalOpen && (
-        <div className="fixed top-0 mt-11 z-50 flex items-center justify-center ">
-          <EngageJane onClose={handleCloseModal} />
-        </div>
-      )}
+      
     </div>
   );
 };

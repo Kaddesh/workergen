@@ -6,6 +6,7 @@ import DashboardHeader from './dashboard/_components/navbar/header';
 import React, { useState } from 'react';
 import Sidebar from './dashboard/_components/navbar/sidebar';
 import Navbar from './dashboard/_components/navbar/header';
+import BlackNav from './dashboard/_components/navbar/blackNav';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,14 +22,19 @@ export default function Dashboard({
 }>) {
 
     const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
  
 
   const toggleSidebar = () => {
     setIsSidebarVisible(!isSidebarVisible);
   }; 
 
-  const closeSidebar = () => {
-    setIsSidebarVisible(false); // Function to close the sidebar on route change
+  const handleMenu = () => {
+    setIsMobile(!isMobile);
+  }; 
+
+  const closeMobile = () => {
+    setIsMobile(false); 
   }; 
 
   return (
@@ -38,10 +44,11 @@ export default function Dashboard({
         'flex min-h-screen w-full  flex-col overflow-hidden ',
       )}
     >
-      <DashboardHeader />
-      <Sidebar  isVisible={isSidebarVisible} closeSidebar={closeSidebar} toggleSidebar={toggleSidebar}/> 
+      <BlackNav />
+      <DashboardHeader handleMenu={handleMenu}/>
+      <Sidebar  isVisible={isSidebarVisible} isMobile={isMobile}  handleMenu={handleMenu} toggleSidebar={toggleSidebar}  closeMobile={closeMobile}/> 
       
-      <div className="flex-auto">{children}</div>
+      <div className="">{children}</div>
     </section>
   );
 }

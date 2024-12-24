@@ -1,10 +1,21 @@
 import React from 'react';
 import { FaChartBar, FaEye, FaPlus, FaSync, FaUsers, FaTrash, FaBrain, FaFilter, FaColumns } from 'react-icons/fa';
+import { IoMenu } from 'react-icons/io5';
 import { RiArrowDropDownLine } from 'react-icons/ri';
 
-const Navbar = () => {
+interface MenuProps {
+  handleMenu: () => void;
+}
+
+const Navbar: React.FC<MenuProps>  = ({handleMenu}) => {
   return (
-    <header className="flex items-center justify-between ml-[12rem] mr-[2rem] text-[0.625rem]  p-1 bg-gray-100 border-b rounded-md border-gray-300">
+    <header className="flex items-center justify-between lg:ml-[12rem] lg:mr-[2rem] mt-10 text-[0.625rem] px-3 lg:px-2 py-1 bg-gray-100 border-b rounded-md border-gray-300">
+
+          <IoMenu
+          size={25}
+          onClick={handleMenu}
+          className="cursor-pointer block lg:hidden"
+        />
       {/* Open Lead Dropdown */}
       <div className="flex items-center space-x-1">
         <span className="font-medium text-gray-700">Open Lead:</span>
@@ -13,7 +24,7 @@ const Navbar = () => {
 
       {/* Action Icons */}
       
-      <nav className="flex items-center">
+      <nav className="hidden lg:flex items-center">
         <button className="flex items-center space-x-1 px-2 py-2 text-gray-700 hover:bg-gray-200 rounded-md">
           <FaChartBar />
           <span>Show Chart</span>

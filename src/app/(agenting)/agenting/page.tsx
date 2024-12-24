@@ -11,7 +11,7 @@ function Agent({}: Props) {
   
        
        <div className="flex items-center justify-center w-full min-h-screen bg-black bg-opacity-40  ">
-       <AgentSkill email='purchasing@contoso.com'/>
+       <AgentSkill email='purchasing@contoso.com' />
         </div>
   
 

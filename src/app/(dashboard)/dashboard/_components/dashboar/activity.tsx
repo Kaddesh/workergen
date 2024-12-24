@@ -9,7 +9,7 @@ const Activity = () => {
     const { greeting, activities } = dashboardData;
   return (
     
-    <div className='w-full lg:w-[40%]'>
+    <div className='w-full lg:w-[30%]'>
       <div className="flex flex-col gap-2">
         <h3 className="text-sm text-slate-400 font-medium">Other Key Activities</h3>
         {activities.map((activity, index) => (

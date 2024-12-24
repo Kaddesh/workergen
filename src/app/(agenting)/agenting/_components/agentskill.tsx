@@ -30,10 +30,10 @@ const AgentSkill = ({ email }: { email: string }) => {
   };
 
   return (
-    <main className="flex items-center lg:justify-center">
-    <div className="md:w-[50%]"> 
+    <main className="flex items-center lg:justify-center px-4 ">
+    <div className="w-full md:w-[50%]"> 
         
-       <div className="bg-white lg:p-8 shadow-2xl rounded-2xl">
+       <div className="bg-white p-3 lg:p-8 shadow-2xl rounded-2xl">
         <div className="flex items-end justify-end mb-2">
       <IoIosClose size={25} className=" text-slate-400 cursor-pointer " />
       </div>
@@ -90,7 +90,7 @@ const AgentSkill = ({ email }: { email: string }) => {
         </h4>
 
         {/* Email Input-like Component */}
-        <div className="flex items-center justify-center gap-3">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-3">
         <div className="flex items-center border w-full border-gray-300 rounded-md p-2 bg-gray-50">
           {/* Circle with Initial */}
           <div className="h-6 w-6 flex items-center justify-center rounded-full bg-orange-200 text-gray-400 text-xs font-bold">

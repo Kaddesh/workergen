@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BsHandThumbsDown, BsHandThumbsUp } from "react-icons/bs";
 import { IoIosClose } from "react-icons/io";
 import { IoChevronDown } from "react-icons/io5";
@@ -13,24 +13,36 @@ import Next from "./next";
 
 interface EngageJaneProps {
   onClose: () => void
+  isOpen: boolean
 }
 
-const EngageJane: React.FC<EngageJaneProps>  = ({onClose}) => {
+const EngageJane: React.FC<EngageJaneProps>  = ({onClose, isOpen}) => {
   const [activeButton, setActiveButton] = useState<string>("Engage");
   const [close, setClose] = useState<boolean>(false);
 
-  const handleClose = () => {
-    setClose(!close)
-}
+  useEffect(() => {
+  if (isOpen) {
+    document.body.style.overflow = "hidden"; // Disable scrolling
+  } else {
+    document.body.style.overflow = ""; // Re-enable scrolling
+  }
+
+  // Clean up on component unmount
+  return () => {
+    document.body.style.overflow = "";
+  };
+}, [isOpen]);
+
+if (!isOpen) return null;
   return (
-    <main className="flex items-center lg:justify-center ">
-    <div className="relative w-full lg:w-[80%] p-px bg-gradient-to-b from-blue-400 to-purple-600 rounded-2xl shadow-lg">
+    
+    <div className="relative w-full lg:w-[80%] max-h-screen p-px bg-gradient-to-b from-blue-400 to-purple-600 rounded-2xl shadow-lg lg:overflow-y-auto" onClick={(e) => e.stopPropagation()}>
       <div className="bg-white rounded-2xl  md:px-3 pb-4">
         <div className="pt-4 lg:p-4 ">
       <div className="flex flex-col items-center justify-center gap-4 ">
 
         {/*Engage with Jane */}
-        <div className="flex items-center justify-between px-5 w-full">
+        <div className="flex items-center justify-between px-5 w-full " >
           <div className="flex items-center  gap-2">
             <div className="h-4 w-4">
             <Image src='/assets/images/mail2.png' alt='mail2' width={50} height={50} className="object-cover"/>
@@ -156,7 +168,7 @@ const EngageJane: React.FC<EngageJaneProps>  = ({onClose}) => {
       <Showing />
     </div>
     </div>
-    </main>
+ 
   );
 };
 

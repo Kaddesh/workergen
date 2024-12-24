@@ -22,8 +22,8 @@ import { GiSkills } from "react-icons/gi";
   export const sidebarData = [
     {
       items: [
-        { icon: AiFillHome, label: "Home", link: "/home" },
-        { icon: AiOutlineClockCircle, label: "Recent", link: "/recent" },
+        { icon: AiFillHome, label: "Home", link: "/dashboard" },
+        { icon: AiOutlineClockCircle,   label: "Recent", link: "/recent" },
         { icon: AiOutlinePushpin, label: "Pinned", link: "/pinned" },  
         { icon: GiSkills, label: "Agent Skill", link: "/agenting" },
       ],
@@ -71,5 +71,6 @@ import { GiSkills } from "react-icons/gi";
         { icon: AiOutlineMail, label: "Quick Campaigns", link: "/Quick-Campaigns" },
       ],
     },
+   
   ];
   
