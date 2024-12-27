@@ -36,13 +36,13 @@ const EngageJane: React.FC<EngageJaneProps>  = ({onClose, isOpen}) => {
 if (!isOpen) return null;
   return (
     
-    <div className="relative w-full lg:w-[80%] max-h-screen p-px bg-gradient-to-b from-blue-400 to-purple-600 rounded-2xl shadow-lg overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-      <div className="bg-white rounded-2xl  md:px-3 pb-4">
-        <div className="pt-4 lg:p-4 ">
-      <div className="flex flex-col items-center justify-center gap-4 ">
+    <div className="relative w-full lg:w-[80%] max-h-full overflow-y-auto p-px bg-gradient-to-b from-blue-400 to-purple-600 rounded-2xl shadow-lg custom-scroll" onClick={(e) => e.stopPropagation()}>
+      <div className="bg-white rounded-2xl md:px-4 pb-4">
+        <div className="pt-4">
+      <div className="flex flex-col items-center justify-center gap-4">
 
         {/*Engage with Jane */}
-        <div className="flex items-center justify-between px-5 w-full " >
+        <div className="flex items-center justify-between px-5 w-full" >
           <div className="flex items-center  gap-2">
             <div className="h-4 w-4">
             <Image src='/assets/images/mail2.png' alt='mail2' width={50} height={50} className="object-cover"/>

@@ -19,16 +19,16 @@ const HorizontalBar = () => {
       <div className="">
       <div className="flex items-center justify-between px-2">
         <div className="flex gap-1">
-        <CiClock1 />
-        <p className="text-slate-400 text-[0.625rem]">1 month until Q4 ends</p>
+        <CiClock1 size={10}/>
+        <p className="text-gray-600 text-[0.5rem] lg:text-[0.625rem]">1 month until Q4 ends</p>
         </div>
 
         <div className="flex gap-1">
-          <p className="text-slate-400 text-[0.625rem]">Target</p>
-          <p className="text-slate-400 text-[0.625rem]">45million</p>
+          <p className="text-gray-600 text-[0.5rem] lg:text-[0.625rem]">Target</p>
+          <p className="text-gray-600 text-[0.5rem] lg:text-[0.625rem]">45million</p>
         </div>
 
-        <div><p className="text-slate-400 text-[0.625rem]">68% of target achieved</p></div>
+        <div><p className="text-gray-600 text-[0.5rem] lg:text-[0.625rem]">68% of target achieved</p></div>
         </div>
       {/* Horizontal Bar */}
       <div className="h-3 flex rounded-lg overflow-hidden border border-gray-300">
@@ -52,7 +52,7 @@ const HorizontalBar = () => {
         ))}
       </div>
     </div>
-    <FaAngleUp size={25} className="text-gray-400"/>
+    <FaAngleUp size={25} className="text-gray-400 cursor-pointer"/>
     </div>
   );
 };

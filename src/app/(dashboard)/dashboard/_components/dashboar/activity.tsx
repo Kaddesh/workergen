@@ -11,7 +11,7 @@ const Activity = () => {
     
     <div className='w-full lg:w-[30%]'>
       <div className="flex flex-col gap-2">
-        <h3 className="text-sm text-slate-400 font-medium">Other Key Activities</h3>
+        <h3 className="text-sm text-gray-600 font-medium">Other Key Activities</h3>
         {activities.map((activity, index) => (
             
           <div key={index} className="flex flex-col px-3 py-2 border rounded-md shadow-xl items-start gap-2">

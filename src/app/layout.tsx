@@ -43,7 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
           {/* Main Content Area */}
           <div className="flex flex-col flex-grow w-full">
-            <main className="p-4">{children}</main>
+            <main className="px-4">{children}</main>
           </div>
         </div>
       </body>

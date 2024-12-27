@@ -15,7 +15,7 @@ const Lead: React.FC<CardProps> = ({handleCard}) => {
 
   return (
     <div className="w-full lg:w-[70%]">
-      <h4 className="text-xs text-gray-300 text-wrap">
+      <h4 className="text-xs text-gray-600 text-wrap">
         Copilot has pinpointed 20 key leads that show strong purchase intent and
         are actively engaging. These leads need your focus
       </h4>
@@ -36,7 +36,7 @@ const Lead: React.FC<CardProps> = ({handleCard}) => {
               </div>
               <div className="flex flex-col gap-2">
                 <h4 className="text-xs font-semibold">{lead.name}</h4>
-                <h4 className="flex items-center gap-2 text-[0.625rem] text-nowrap text-gray-400">
+                <h4 className="flex items-center gap-2 text-[0.625rem] text-nowrap text-gray-500">
                   {lead.position}
                   <div className="h-1 w-1 bg-black rounded-full"></div>
                   {lead.company}
@@ -53,7 +53,7 @@ const Lead: React.FC<CardProps> = ({handleCard}) => {
                 <LuCalendarRange/>
                 <h4 className="text-xs font-semibold ">{lead.iconDescrip}</h4>
               </div> }
-              <p className="text-xs text-gray-400">{lead.description}</p>
+              <p className="text-xs text-gray-600">{lead.description}</p>
 
               <div className="absolute top-0 right-0 p-1 bg-gray-50 rounded-sm">
                       <VscSparkleFilled size={10} className=" text-blue-900" />
@@ -63,14 +63,17 @@ const Lead: React.FC<CardProps> = ({handleCard}) => {
             
 
             {/* Tags */}
-            <div>
-              {lead.tags.map((tag, i) => (
-                <span key={i} className="text-[0.625rem] text-slate-400">
-                  {tag}
-                  <div className="h-1 w-1 bg-black rounded-full inline-block"></div>
-                </span>
-              ))}
-            </div>
+            <div className="flex items-center">
+  {lead.tags.map((tag, i) => (
+    <span key={i} className="text-[0.625rem] text-gray-600 flex items-center">
+      {tag}
+      {i < lead.tags.length - 1 && (
+        <div className="h-1 w-1 bg-black rounded-full mx-1"></div>
+      )}
+    </span>
+  ))}
+</div>
+
           </div>
         ))}
       </div>

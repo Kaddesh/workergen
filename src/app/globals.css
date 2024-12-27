@@ -44,3 +44,11 @@ li::before {
   color: black; /* Tailwind's text-slate-600 */
 }
 
+.custom-scroll {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.custom-scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Edge, and Safari */
+}

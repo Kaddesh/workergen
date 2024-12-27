@@ -22,8 +22,9 @@ const DashboardModaal: React.FC = () => {
   };
 
   return (
-    <section className=" relative rounded-2xl border-2 border-[#49A2FA] px-2 lg:pl-4 lg:pr-2 py-6 ">
+    <section className=" relative rounded-2xl border-2 border-[#49A2FA] lg:pl-4 lg:pr-2 py-6 ">
       {/* Greeting Section */}
+      <div className="px-2">
         <div className="flex flex-col lg:flex-row  w-full gap-4">
         <div className="flex items-center w-full lg:w-[60%] gap-2">
         <Image src='/assets/images/Copilot-Logo.svg' alt="copilot" width={50} height={50} />
@@ -43,10 +44,10 @@ const DashboardModaal: React.FC = () => {
        {/* Activities Section */}
        <Activity />
       </div>
-
+      </div>
       {/* Modal */}
       {isModalOpen && (
-        <div className="absolute -top-16 flex items-center lg:justify-center mt-11 z-50  ">
+        <div className="absolute -top-16 z-30 flex items-center lg:justify-center mt-11  ">
           <EngageJane onClose={handleCloseModal} isOpen={isModalOpen}/>
         </div>
       )}

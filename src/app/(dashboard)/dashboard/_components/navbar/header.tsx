@@ -19,7 +19,7 @@ const Navbar: React.FC<MenuProps>  = ({handleMenu}) => {
       {/* Open Lead Dropdown */}
       <div className="flex items-center space-x-1">
         <span className="font-medium text-gray-700">Open Lead:</span>
-        <RiArrowDropDownLine className='cursor-pointer' />
+        <RiArrowDropDownLine size={25} className='cursor-pointer' />
       </div>
 
       {/* Action Icons */}
@@ -65,7 +65,7 @@ const Navbar: React.FC<MenuProps>  = ({handleMenu}) => {
           <span>Edit Columns</span>
         </button>
         <button className="flex items-center space-x-1 px-2 py-2 bg-blue-800 hover:bg-blue-600 rounded-md shadow-md">
-          <FaColumns />
+          <FaColumns className='cursor-pointer text-white'/>
           <div className="h-4 w-px bg-white"></div>
           <RiArrowDropDownLine className='cursor-pointer text-white'/>
         </button>
